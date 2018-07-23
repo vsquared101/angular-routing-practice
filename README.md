@@ -54,7 +54,7 @@ Since we have used Angular CLI the newly created components will be automaticall
 ```typescript
       RouterModule.forRoot(appRoutes)
 ```
-### Add the <router-outlet> tag in app.component.html to enable Angular to work with the configured routes:
+### Add the router-outlet tag in app.component.html to enable Angular to work with the configured routes:
 
 ```html
     <div style="text-align:center">

@@ -62,6 +62,8 @@ ng serve --host 0.0.0.0 --port 8080 --public-host $C9_HOSTNAME(when using Cloud9
 we _should_ be able to access content specific to the routes configured
 
 http://localhost:4200 or http://localhost:4200/home should display content provided by the HomeComponent.
+
 http://localhost:4200/about should display the content of AboutComponent.
+
 http://localhost:4200/contact should display the content of ContactComponent.
 

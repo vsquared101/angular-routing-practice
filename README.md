@@ -65,7 +65,7 @@ Since we have used Angular CLI the newly created components will be automaticall
     <router-outlet></router-outlet>
 ```
 
-With the above change in place Angular will inject the selector for the active component based on the URL we are currently on _after_ the <router-outlet> tag in the rendered page.
+With the above change in place Angular will inject the selector for the active component based on the URL we are currently on _after_ the _router-outlet_ tag in the rendered page.
 
 Now if we run the application by using:
 

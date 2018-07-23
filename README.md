@@ -120,3 +120,55 @@ To give the control to Angular when we click on these links and avoid full page 
 
 ```
 
+We can now add some style to these links to display the active/current link with a different background color.
+
+```css
+
+  .active {
+      background-color: #E3E3E3;
+  }
+  
+```
+
+This class can now be added to all the links using the `routerLinkActive` directive. 
+Updated app.component.html:
+
+```html
+
+	<div style="text-align:center">
+	  <h1>
+		Welcome to {{ title }}!
+	  </h1>
+	</div>
+	<nav>
+	  <a routerLink="/" routerLinkActive="active">Home</a>&nbsp;
+	  <a routerLink="/about" routerLinkActive="active">About</a>&nbsp;
+	  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+	</nav>
+	<router-outlet></router-outlet>
+
+```
+With above update we see the link we are currently at gets a grey background but there is a minor issue.
+The 'home' link is _always_ highlighted. This is because if we are on /about or /contact it *includes* the '/'(root route).
+To resolve this we can add another directive `routerLinkActiveOptions` with the exact match set to true.
+The exact:true value makes sure that the route should exactly match for it to be styled as active.(inclusive routes are _not_ allowed)
+
+```html
+
+	<div style="text-align:center">
+	  <h1>
+		Welcome to {{ title }}!
+	  </h1>
+	</div>
+	<nav>
+	  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>&nbsp;
+	  <a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>&nbsp;
+	  <a routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a>
+	</nav>
+	<router-outlet></router-outlet>
+
+```
+
+
+
+

@@ -168,7 +168,3 @@ The exact:true value makes sure that the route should exactly match for it to be
 	<router-outlet></router-outlet>
 
 ```
-
-
-
-

@@ -6,7 +6,9 @@ Here the very basics of Angular routing are explained starting from how to inclu
 
 Use Angular CLI to generate 3 components: 'home', 'about' and 'contact'.
 > ng generate component home
+
 > ng generate component about
+
 > ng generate component contact
 
 Since we have used Angular CLI the newly created components will be automatically added to the declarations array in the app module file.

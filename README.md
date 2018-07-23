@@ -1,4 +1,4 @@
-# Routing Practice(project generated using Angular CLI version 6.0.8)
+# Routing Practice(generated using Angular CLI version 6.0.8)
 
 Here the very basics of Angular routing are explained starting from how to include the router module and configure possible routes within an Angular application to how we can pass and retrieve path and query parameters via the different routes.
 
@@ -79,4 +79,44 @@ http://localhost:4200 or http://localhost:4200/home should display content provi
 http://localhost:4200/about should display the content of AboutComponent.
 
 http://localhost:4200/contact should display the content of ContactComponent.
+
+Along with typing the different route URLs in the browser's address bar 
+we can add a navigation bar to the Home page with links to these routes so that it is closer to how a real-world application works.
+For this we need to add a nav element within app.component.html which contains anchor tags for the different routes within it.
+The updated app.component.html is given below:
+
+```html
+
+	<div style="text-align:center">
+	  <h1>
+		Welcome to {{ title }}!
+	  </h1>
+	</div>
+	<nav>
+	  <a href="/">Home</a>&nbsp;
+	  <a href="/about">About</a>&nbsp;
+	  <a href="/contact">Contact</a>
+	</nav>
+	<router-outlet></router-outlet>
+
+```
+
+With the above change we would see three links 'Home', 'About', 'Contact' but when we click on any one of them the complete page will get refreshed which defeats the purpose of creating a Single Page Application(SPA) using Angular.
+To give the control to Angular when we click on these links and avoid full page reload we need to replace 'href' with 'routerLink' property.
+
+```html
+
+	<div style="text-align:center">
+	  <h1>
+		Welcome to {{ title }}!
+	  </h1>
+	</div>
+	<nav>
+	  <a routerLink="/">Home</a>&nbsp;
+	  <a routerLink="/about">About</a>&nbsp;
+	  <a routerLink="/contact">Contact</a>
+	</nav>
+	<router-outlet></router-outlet>
+
+```
 

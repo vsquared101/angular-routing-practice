@@ -54,6 +54,19 @@ Since we have used Angular CLI the newly created components will be automaticall
 ```typescript
       RouterModule.forRoot(appRoutes)
 ```
+### Add the <router-outlet> tag in app.component.html to enable Angular to work with the configured routes:
+
+```html
+    <div style="text-align:center">
+      <h1>
+        Welcome to {{ title }}!
+      </h1>
+    </div>
+    <router-outlet></router-outlet>
+```
+
+With the above change in place Angular will inject the selector for the active component based on the URL we are currently on _after_ the <router-outlet> tag in the rendered page.
+
 Now if we run the application by using:
 
 ng serve(for local machine) 

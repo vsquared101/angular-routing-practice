@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const appRoutes: Routes = [
@@ -24,6 +25,10 @@ const appRoutes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ]
 
@@ -32,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

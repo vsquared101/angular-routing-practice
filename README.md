@@ -168,3 +168,39 @@ The exact:true value makes sure that the route should exactly match for it to be
 	<router-outlet></router-outlet>
 
 ```
+
+Along with the above routes we can also add a route that acts as a "catch-all" in case the user enters/navigates to an invalid route. 
+We can create a "not-found" component which provides us the HTML to be displayed for the above cases.
+
+> ng generate component not-found
+
+With the not-found component created we can configure the route corresponding to it as the last route in the app.module.ts file:
+
+```typescript
+    const appRoutes: Routes = [
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'home',
+        redirectTo: ''
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
+    ];
+```
+
+The order of routes within the appRoutes array is _very_ important. 
+As a general rule we should add routes that are more specific followed by the more generic ones.
+The route that acts as a catch-all should be added at the end with the path equal to "**" wildcard characters which denotes any URL value will match it.
